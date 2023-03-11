@@ -102,6 +102,16 @@ body{
   height: 70%;
   margin: auto;
 }
+.characteristics > div:nth-child(2) {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.stats{
+  background-color: unset!important;
+  padding: 0;
+}
 
 .characteristics input{
   font-size: 18px;
@@ -142,16 +152,33 @@ body{
   font-weight: bold;
 }
 
-input[name="power"]::placeholder{
+.btns{
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  font-size: 18px;
+}
+
+.btns button{
+  width: 40px;
+  font-size: 18px;
+}
+
+.btns .characteristics-value{
+  align-self: center;
+  font-weight: bolder;
+}
+
+.power > .characteristics-value{
   color: darkred;
 }
-input[name="agility"]::placeholder{
+.agility > .characteristics-value{
   color: darkcyan;
 }
-input[name="intelligence"]::placeholder{
+.intelligence > .characteristics-value{
   color: darkslateblue;
 }
-input[name="charisma"]::placeholder{
+.charisma > .characteristics-value{
   color: darkviolet;
 }
 

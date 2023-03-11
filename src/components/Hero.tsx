@@ -15,8 +15,7 @@ export function Hero(props: HeroProps) {
                 </span>
                 <img src={ props.hero.image }/>
                 <input className="char-id" type="hidden" value={ props.hero.id }/>
-                <label>Имя</label>
-                <input className="name-char" type="text" placeholder={ props.hero.name } />
+                <p className="name-char">Имя: { props.hero.name }</p>
                 <p className="age-char">Возраст: { props.hero.age }</p>
             </div>
             <div className="char-params">
@@ -26,24 +25,13 @@ export function Hero(props: HeroProps) {
                         <p className="dodge-lvl">Уклонение : { props.hero.dodge }</p>
                         <p className="energy-lvl">Энергия : { props.hero.energy } / {props.hero.maxEnergy}</p>
                     </div>
-                    <div>
-                        <p className="char-lvl power"><span className="characteristic-name">Сила</span> : </p>
-                        <input type="number" name="power" placeholder={ props.hero.power.toString() }/>
-                        <p className="char-lvl agility"><span className="characteristic-name">Ловкость</span> : </p>
-                        <input type="number" name="agility" placeholder={ props.hero.agility.toString() }/>
-                        <p className="char-lvl intelligence"><span className="characteristic-name">Интеллект</span> :  </p>
-                        <input type="number" name="intelligence" placeholder={ props.hero.intelligence.toString() }/>
-                        <p className="char-lvl charisma"><span className="characteristic-name">Харизма</span> : </p>
-                        <input type="number" name="charisma" placeholder={ props.hero.charisma.toString() }/>
+                    <div className="stats">
+                        <p className="char-lvl power"><span className="characteristic-name">Сила</span> : { props.hero.power.toString() }</p>
+                        <p className="char-lvl agility"><span className="characteristic-name">Ловкость</span> : { props.hero.agility.toString() }</p>
+                        <p className="char-lvl intelligence"><span className="characteristic-name">Интеллект</span> :  { props.hero.intelligence.toString() }</p>
+                        <p className="char-lvl charisma"><span className="characteristic-name">Харизма</span> : { props.hero.charisma.toString() }</p>
                     </div>
                 </div>
-                {/*<div className="buttons">
-                    <button>Take damage</button>
-                    <button>Take more Damage</button>
-                    <button>Kill yourself</button>
-                    <button>Healing</button>
-                    <button>Cure completely</button>
-                </div>*/}
             </div>
         </div>
     )

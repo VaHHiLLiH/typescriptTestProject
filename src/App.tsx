@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
 import {Hero} from './components/Hero';
 import {chars} from './data/Chars';
+import {MyHero} from './components/MyHero';
 
-import {myHero} from './components/myHero';
-import {char} from './data/yourHero';
+import {HeroConf} from "./data/HeroConf";
+import {HeroPerson} from "./Model/HeroPerson";
 
 function App() {
     const [count, setCount] = useState(0);
     const [page, setPage] = useState(true);
+    const [myHero, changeHero] = useState<HeroPerson>(new HeroPerson(HeroConf.id, HeroConf.imageDefault, HeroConf.imageDie, HeroConf.perkDescription, HeroConf.name, HeroConf.age, HeroConf.power, HeroConf.agility, HeroConf.intelligence, HeroConf.charisma))
+
+    //let myHero = new HeroPerson(HeroConf.id, HeroConf.imageDefault, HeroConf.imageDie, HeroConf.perkDescription, HeroConf.name, HeroConf.age, HeroConf.power, HeroConf.agility, HeroConf.intelligence, HeroConf.charisma);
 
   return (
     <div className="App">
@@ -30,7 +34,7 @@ function App() {
         </div>}
         { ! page && <div className="your-char">
             <h1>Ваш герой!</h1>
-            {/*<myHero myHero={char[0]} />*/}
+            <MyHero Hero={myHero} />
         </div>}
     </div>
   );
